@@ -9,7 +9,7 @@
 #define MAX_INP 1000
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[], char *envp[]) {
   char input_string[MAX_INP];
   char delim = ' ';
   char p[1024];
@@ -24,5 +24,5 @@ int main(int argc, char* argv[]) {
   }else{
   checkForBinary(input_string,delim);
   } 
-}
+  return 0;
 }
