@@ -1,49 +1,23 @@
-cscope 15 $HOME/workdir/bin/sbush               0000137038
+cscope 15 $HOME/workdir/bin/sbush               0000125126
 	@binaryoper.c
 
-1 
-	#_POSIX_SOURCE
-
-
-	)
-
-2 
-	~<°dio.h
->
-
-3 
-	~<sig«l.h
->
-
-4 
-	~<°rög.h
->
-
-5 
-	~<°dlib.h
->
-
-6 
-	~<î∫o.h
->
-
-7 
+1 
 	~<uni°d.h
 >
 
-8 
-	~<sys/waô.h
+2 
+	~<°rög.h
 >
 
-9 
-	~<sys/ty≥s.h
+3 
+	~<sys/defs.h
 >
 
-10 
-	~"°rög›î.h
-"
+4 
+	~<°dio.h
+>
 
-12 
+5 
 	$checkF‹Bö¨y
 (
 °r
@@ -51,82 +25,150 @@ cscope 15 $HOME/workdir/bin/sbush               0000137038
 dñim
 ){
 
-13 
-pid_t
- 
-chûd_id
- ;
-
-14 * c⁄°* 
+6 *
 s
- = 
-	`•lô_°rög
+[100];
+
+7 
+°r2
+[100] = "/bin/";
+
+8 
+	`°rˇt
 (
-°r
+°r2
 ,
-dñim
+°r
 );
 
-18 
+9 
+	`•lô_°rög
+(
+°r2
+,
+dñim
+,
+s
+);
+
+10 
 i
 = -1;
 
-19 
+11 
 °©us
 =0;
 
-20 if((
+12 if((
 i
  = 
 	`f‹k
 ()) == 0){
 
-21 if(
+13 
 	`execvp
 (
 s
-[0], s)< 0){
+[0], s);
 
-22 
-	`≥º‹
-("execvpÉrror");
-
-26 (
-chûd_id
- = 
-	`waô
-(&
-°©us
-)) > 0);
-
-27 
-	`fÊush
+15 
+	`waôpid
 (
-NULL
-);
+i
+,&
+°©us
+,0);
 
-28 
+18 
 	}
 }
 
-	@binaryoper.h
-
-1 
-checkF‹Bö¨y
-(
-°r
-[] ,
-dñim
-);
-
-	@cdoper.c
+	@cd.c
 
 1 
-	~<°dlib.h
+	~<uni°d.h
 >
 
 2 
+	~<°rög.h
+>
+
+3 
 	~<°dio.h
+>
+
+4 
+	$ch™ge_dú
+(*
+cmd
+) {
+
+5 
+gwd
+[1024];
+
+6 
+i
+ = 0;
+
+8 
+cmd
+ += 3;
+
+9 
+cmd
+[
+	`°æí
+(cmd) - 1] = '\0';
+
+10 *
+cmd
+ != '\0') {
+
+11 i‡(*
+cmd
+ != ' ' || *cmd != '\t') {
+
+12 
+gwd
+[
+i
+++] = *
+cmd
+;
+
+14 
+cmd
+++;
+
+16 
+gwd
+[
+i
+] = '\0';
+
+17 i‡(
+	`chdú
+(
+gwd
+) < 0) {
+
+18 
+	`¥ötf
+("%s", "Wrongáddress :Directory isÇot changed");
+
+20 
+	}
+}
+
+	@exec_sh.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<°dlib.h
 >
 
 3 
@@ -134,148 +176,522 @@ dñim
 >
 
 4 
-	~<î∫o.h
+	~<°rög.h
 >
 
-6 
-	$cdCÆÀd
-(
+5 
+	~<sys/defs.h
+>
+
+6 
+	~<libc.h
+>
+
+8 
+	$exec_shñl
+(*
+cmd
+) {
+
+9 
+pid_t
+ 
+pid
+;
+
+10 *
 °r
-[]){
+[100];
 
-7 if(
-°r
-[0] == 'c' && str[1] == 'd'){
+11 
+°©us
+ = 0;
 
-11 
-	}
-}
-
-14 
-	$checkF‹CD
-(
-°r
-[], 
-∑th_Àn
-){
-
-15 
-∑th
- [500];
-
-16 
-ªt
- = -1;
-
-17 
-cuº_dú
-[1024] ;
-
-18 if(
-	`gëcwd
+13 if(
+	`°r°r
 (
-cuº_dú
-,(cuº_dú)Ë!
+cmd
+, "&"Ë!
 NULL
-){
+) {
 
-19 if(
+15 
+pid
+ = 
+	`f‹k
+();
+
+16 i‡(
+pid
+ == -1) {
+
+17 
+	`¥ötf
+("%s","ErrorÉxecutingÅhe command\n");
+
+19 } i‡(
+pid
+ == 0) {
+
+20 
+	`•lô_°rög
+(
+cmd
+, ' ',
 °r
-[0] == 'c' && str[1] == 'd'){
+);
 
-20 
-i
- =0;
-
-21 i‡(
+21 
+	`execvp
+(
 °r
-[2] != '/'){
-
-22  ; 
-cuº_dú
-[
-i
-] != '\0';++ i){
-
-23 
-∑th
-[
-i
-]
-cuº_dú
-[i];
+[0], str);
 
 25 
-∑th
-[
-i
-] = '/';
+	`exô
+(1);
 
-26 
-i
-++;
+28 
+pid
+ = 
+	`f‹k
+();
 
-28 
-j
- =2; 
-°r
-[j] != '\0'; j++){
-
-29 
-∑th
-[
-i
-] = 
-°r
-[
-j
-];
+29 if(
+pid
+ == 0) {
 
 30 
-i
+	`•lô_°rög
+(
+cmd
+, ' ', 
+°r
+);
+
+31 
+	`execvp
+(
+°r
+[0], str);
+
+36 
+	`waôpid
+(
+pid
+, &
+°©us
+, 0);
+
+42 
+	`pùe_¥oc
+(*
+°r
+) {
+
+43 
+pid_t
+ 
+pid
+;
+
+44 
+pid_t
+ 
+pid2
+;
+
+45 
+°©us
+ = 0;
+
+46 
+pùe_num
+ = 0;
+
+47 *
+cmd
+;
+
+48 
+p_cmd
+[512];
+
+49 
+n_byãs
+;
+
+50 
+ouçut_pùe
+[2];
+
+51 
+cmd_pùe
+[2];
+
+52 *
+¨g1
+[100];
+
+53 *
+¨g2
+[100];
+
+55 
+cmd
+ = 
+°r
+;
+
+56 *
+cmd
+ != '\0') {
+
+57 if(*
+cmd
+ == '|') {
+
+58 
+pùe_num
 ++;
 
-32 
-∑th
-[
-i
-]= '\0';
+60 
+cmd
+++;
 
-33 
-ªt
+62 
+cmd
  = 
-	`chdú
+°r
+;
+
+63 i‡(
+	`pùe
 (
-∑th
+ouçut_pùe
+) == -1) {
+
+64 
+	`¥ötf
+("%s","Error creatingÖipe\n");
+
+67 i‡(
+	`pùe
+(
+cmd_pùe
+) == -1) {
+
+68 
+	`¥ötf
+("%s","Error creatingÖipe\n");
+
+73 
+pid
+ = 
+	`f‹k
+();
+
+75 i‡(
+pid
+ == -1) {
+
+76 
+	`¥ötf
+("%s","ErrorÉxecutingÖipe command\n");
+
+79 i‡(
+pid
+ == 0) {
+
+81 
+n_byãs
+ = 0;
+
+82 *
+cmd
+ != '|' && *cmd != '\0') {
+
+83 i‡(*
+cmd
+ != ' ' || *cmd != '\t' || *cmd != '\n') {
+
+84 
+p_cmd
+[
+n_byãs
+++] = *
+cmd
+;
+
+86 
+cmd
+++;
+
+88 i‡(*
+cmd
+ != '\0')
+
+89 
+cmd
+++;
+
+90 i‡(
+p_cmd
+[
+n_byãs
+-1] == ' ') {
+
+91 
+p_cmd
+[--
+n_byãs
+] = '\0';
+
+93 
+p_cmd
+[
+n_byãs
+] = '\0';
+
+95 
+	`•lô_°rög
+(
+p_cmd
+, ' ',
+¨g1
 );
 
-34 if(
-ªt
- != 0){
+97 
+	`˛o£
+(1);
 
-35 
-	`≥º‹
-( "Directory isÇot changed,Örobably wrongáddress\n");
+98 
+	`dup2
+(
+ouçut_pùe
+[1],1);
 
-39 
+99 
+	`˛o£
+(
+ouçut_pùe
+[1]);
+
+100 
+	`˛o£
+(
+ouçut_pùe
+[0]);
+
+101 if(
+	`wrôe_sys
+(1, 
+cmd_pùe
+[1], 
+cmd
+, 
+	`°æí
+(cmd)) < 0) {
+
+102 
+	`¥ötf
+("%s","WriteÅoÖipe failed\n");
+
+103 
+	`exô
+(1);
+
+105 
+	`˛o£
+(
+cmd_pùe
+[0]);
+
+106 
+	`•lô_°rög
+(
+p_cmd
+, ' ',
+¨g1
+);
+
+107 
+	`execvp
+(
+¨g1
+[0],árg1);
+
+108 
+	`¥ötf
+("%s","Error whileÉxecuting 2nd command\n");
+
+109 
+	`exô
+(1);
+
+112 
+pid
+ = 
+	`waôpid
+’id, &
+°©us
+, 0);
+
+113 
+pid2
+ = 
+	`f‹k
+();
+
+114 i‡(
+pid2
+ == 0) {
+
+116 
+n_byãs
+ = 0;
+
+117 
+	`waôpid
+(
+pid
+, &
+°©us
+, 0);
+
+118 
+	`dup2
+(
+ouçut_pùe
+[0], 0);
+
+119 
+	`˛o£
+(
+ouçut_pùe
+[0]);
+
+120 
+	`˛o£
+(
+ouçut_pùe
+[1]);
+
+121 i‡(
+	`ªad_sys
+(0, 
+cmd_pùe
+[0], 
+cmd
+, 
+	`°æí
+(cmd)) < 0) {
+
+122 
+	`¥ötf
+("%s","Read fromÖipe failed\n");
+
+123 
+	`exô
+(1);
+
+125 
+cmd
+++;
+
+127 
+n_byãs
+ = 0;
+
+128 *
+cmd
+ != '|' && *cmd != '\0') {
+
+129 if(*
+cmd
+ == '\n') {
+
+132 i‡(*
+cmd
+ != ' ' || *cmd != '\t' || *cmd != '\n') {
+
+133 
+p_cmd
+[
+n_byãs
+++] = *
+cmd
+;
+
+135 
+cmd
+++;
+
+137 i‡(*
+cmd
+ != '\0')
+
+138 
+cmd
+++;
+
+139 
+p_cmd
+[
+n_byãs
+] = '\0';
+
+140 
+	`˛o£
+(
+cmd_pùe
+[1]);
+
+141 
+	`•lô_°rög
+(
+p_cmd
+, ' ', 
+¨g2
+);
+
+142 
+	`execvp
+(
+¨g2
+[0],árg2);
+
+143 
+	`¥ötf
+("%s","Error whileÉxecuting 2nd command\n");
+
+144 
+	`exô
+(1);
+
+148 
+	`˛o£
+(
+ouçut_pùe
+[0]);
+
+149 
+	`˛o£
+(
+ouçut_pùe
+[1]);
+
+150 
+	`waôpid
+(
+pid
+, &
+°©us
+, 0);
+
+155 
 	}
 }
-
-	@cdoper.h
-
-1 
-checkF‹CD
-(
-°r
-[], 
-∑th_Àn
-);
-
-2 
-cdCÆÀd
-(
-°r
-[]);
 
 	@sbush.c
 
@@ -284,7 +700,7 @@ cdCÆÀd
 >
 
 2 
-	~<°dlib.h
+	~<sys/defs.h
 >
 
 3 
@@ -292,144 +708,106 @@ cdCÆÀd
 >
 
 4 
-	~<°rög.h
+	~<cd.h
 >
 
 5 
-	~"°rög›î.h
-"
+	~<°rög.h
+>
 
 6 
-	~"bö¨y›î.h
-"
+	~<bö¨y›î.h
+>
 
 7 
-	~"cd›î.h
-"
+	~<s¸ùts.h
+>
 
-8 
-	~"s¸ùts.h
-"
-
-9 
-	#MAX_INP
- 1000
-
-	)
-
-12 
+8 
 	$maö
 (
 ¨gc
-, * 
+, *
 ¨gv
+[], *
+ívp
 []) {
 
-13 
-öput_°rög
-[
-MAX_INP
-];
+9 
+cwd
+[1024];
 
-14 
+10 
+cmd
+[1024];
+
+11 
 dñim
  = ' ';
 
-15 
-p
-[1024];
-
-17 
-	`¥ötf
-("%s: %†$", "sbush> ",
+13 
 	`gëcwd
 (
-p
-,(p)));
+cwd
+,1024);
 
-18 
-öput_Àn
- = 
-	`gëI≈utSåög
-(
-öput_°rög
+14 
+	`¥ötf
+ ("%s", 
+cwd
 );
 
-19 *
-tokíized
- = 
-	`tokíizeTheSåög
+15 
+	`¥ötf
+("%s","<sbush>");
+
+16 
+	`fgës
 (
-öput_°rög
-,
-öput_Àn
-,
-dñim
+cmd
+,100,1);
+
+17 if(
+cmd
+[0] == 'c' && cmd [1] == 'd'){
+
+18 
+	`ch™ge_dú
+(
+cmd
 );
 
-20 if(
-	`cdCÆÀd
-(
-tokíized
-) == 1){
-
-21 
-	`checkF‹CD
-(
-tokíized
-, 
-öput_Àn
-);
-
-22 }if(
-	`s¸ùtCÆÀd
-(
-tokíized
-) == 1) {
-
-23 
-	`vîifyAndRunS¸ùt
-(
-öput_°rög
-,
-dñim
-);
-
-25 
-	`checkF‹Bö¨y
-(
-öput_°rög
-,
-dñim
-);
-
-28 
+31 
 	}
 }
 
 	@scripts.c
 
 1 
-	~<°dio.h
+	~<°rög.h
 >
 
 2 
-	~<°dlib.h
+	~<bö¨y›î.h
 >
 
 3 
-	~"°rög›î.h
-"
+	~<°dio.h
+>
 
 4 
-	~"bö¨y›î.h
-"
+	~<cd.h
+>
 
 5 
-	~"cd›î.h
-"
+	~<uni°d.h
+>
 
-59 
+6 
+	~<°dio.h
+>
+
+7 
 	$vîifyAndRunS¸ùt
 (
 ∑th
@@ -437,189 +815,165 @@ dñim
 dñim
 ){
 
-60 
-FILE
- *
+8 
 fûe
  ;
 
-61 
-cou¡
+10 *
+ãmp
+ = 
+NULL
 ;
 
-62 
-ãmp
-[60];
-
-63 
-cou¡
- = 0;
-
-64 
+12 
 Àn
  ;
 
-65 *
-tokíized
-;
+13 
+	`¥ötf
+("%s","Iám here");
 
-66 if((
+14 if((
 fûe
  = 
-	`f›í
+	`›í
 (
 ∑th
-,"rwx")Ë=
-NULL
-){
+,3)) == 0){
 
-67 
-	`≥º‹
-("fileÖath isÇot found");
+15 
+	`¥ötf
+("%s","fileÖath isÇot found");
 
-69 
-	`fgës
+17 
+	`¥ötf
+("%s","Iám hereÅoo\n:");
+
+18 
+	`¥ötI¡
 (
-ãmp
-,—emp),
 fûe
-Ë!
-NULL
-){
+);
 
-70 
+19 
+ãmp
+ = 
+	`fgës
+—emp,1000,
+fûe
+);
+
+20 *
+löe
+[100];
+
+21 
+	`¥ötf
+("%s",
+ãmp
+);
+
+22 
 Àn
  = 
-	`°æín
+	`°æí
 (
 ãmp
 );
 
-71 
+23 
 ãmp
 [
 Àn
  - 1] = '\0';
 
-72 i‡((
-cou¡
- !=0Ë&& (
-ãmp
-[0] != ' ') && (temp[0] != '\0') &&
-
-73 (
-ãmp
-[0] != '\r') && (temp[0] != '\n')){
-
-74 
-	`¥ötf
-("Löêªad i¿fûê: %†\n",
-ãmp
-);
-
-75 
-tokíized
- = 
-	`tokíizeTheSåög
+24 
+	`•lô_°rög
 (
 ãmp
-, 
-Àn
-, 
-dñim
+, '\n', 
+löe
 );
 
-76 if(
-	`cdCÆÀd
-(
-tokíized
-) == 1){
-
-77 
-	`checkF‹CD
-(
-tokíized
-, 
-Àn
-);
-
-79 
-	`checkF‹Bö¨y
-(
-ãmp
-,
-dñim
-);
-
-82 
-cou¡
-++;
-
-84 
+36 
 	}
 }
 
-86 
+38 
 	$s¸ùtCÆÀd
 (
 °r
 []){
 
-87 
+39 
 Àn
  = 
-	`°æín
+	`°æí
 (
 °r
 );
 
-88 
+40 
+	`¥ötf
+("%s\n","len");
+
+41 
+	`¥ötI¡
+(
+Àn
+);
+
+42 
 dñim
  = ' ';
 
-89 
+43 
 i
  ,
 k
 ;
 
-90 if(
+44 
 Àn
- > 8){
+-=1;
 
-91 if(
-°r
-[
+46 if(
 Àn
--6] == '.' && str[len-5] == 's' && str[len-4] == 'b'
+ > 6){
 
-92 && 
+47 if(
+	`°r°r
+(
 °r
-[
-Àn
--3] == 'u' && str[len-2] == 's' && str[len-1] == 'h' ){
+,".sbush") != 0){
 
-93 if(
+48 if(
+	`°r°r
+(
 °r
-[0] != 'c' && str[1] != 'h' &&
+,"chmod") == 0){
 
-94 
-°r
-[2] != 'm' && str[3] != 'o' && str[4] != 'd'){
+49 
+	`¥ötf
+("%s","lovely");
 
-95 
+50 
 ch
 [100] = {'c','h','m','o','d',' ','a','+','x',' '};
 
-96 
+51 
 k
  = 0;
 
-97 
+52 
 i
  =10;
 
-98  ; 
+53 
+	`¥ötf
+("%s","Enter for");
+
+54  ; 
 i
  < 10+
 Àn
@@ -627,7 +981,7 @@ i
 k
 ++){
 
-99 
+55 
 ch
 [
 i
@@ -637,13 +991,13 @@ i
 k
 ];
 
-101 
+57 
 ch
  [
 i
 ] = '\0';
 
-102 
+58 
 	`checkF‹Bö¨y
 (
 ch
@@ -651,1383 +1005,9 @@ ch
 dñim
 );
 
-108 
+64 
 	}
 }
-
-	@scripts.h
-
-2 
-vîifyAndRunS¸ùt
-(
-°r
-[], 
-dñim
-);
-
-3 
-s¸ùtCÆÀd
-(
-ch
-[]);
-
-	@stringoper.c
-
-1 
-	~<°dlib.h
->
-
-2 
-	~<°dio.h
->
-
-5 ** 
-	$•lô_°rög
-(
-°r
-[], 
-dñim
-){
-
-6 **
-s
- = (**)
-	`mÆloc
-(5 * (*));
-
-7 
-f
-=0; f != 5; ++f) {
-
-8 
-s
-[
-f
-] = 
-	`mÆloc
-(50 * ());
-
-10 
-i
- =0;
-
-11 
-j
- =0;
-
-12 
-k
-=0;
-
-13 
-°r
-[
-i
-] != '\0'){
-
-14 if(
-°r
-[
-i
-] !
-dñim
-){
-
-15 
-s
-[
-j
-][
-k
-] = 
-°r
-[
-i
-];
-
-18 
-s
-[
-j
-][
-k
-] = '\0';
-
-19 
-j
-++;
-
-20 
-k
- = -1;
-
-22 
-i
-++;
-
-23 
-k
-++;
-
-25 
-s
-[
-j
-][
-k
-] = '\0';
-
-26 
-s
-[
-j
-+1] = (*)0;
-
-27  
-s
-;
-
-28 
-	}
-}
-
-31 
-	$°æín
-(
-°r
-[]){
-
-32 
-i
- =0;
-
-33 ; 
-°r
-[
-i
-] != '\0'; i++);
-
-34  
-i
-;
-
-35 
-	}
-}
-
-37 
-	$gëI≈utSåög
-(
-°r
-[]){
-
-38 
-c
-;
-
-39 
-i
- =0;
-
-40 (
-c
-
-	`gëch¨
-()Ë!
-EOF
- && (c != '\n')){
-
-41 
-°r
-[
-i
-] =
-c
-;
-
-42 ++
-i
-;
-
-44 
-°r
-[
-i
-] ='\0';
-
-45  
-i
-;
-
-46 
-	}
-}
-
-48 * 
-	$tokíizeTheSåög
-(
-°r
-[], 
-Àn
-, 
-dñim
-){
-
-49 
-i
-, 
-j
-;
-
-50 
-i
-=
-j
-=0;
-
-51 * 
-föÆ_°rög
- = (*)
-	`mÆloc
-((Ë* (
-Àn
--1));
-
-52 
-i
- < 
-Àn
-){
-
-53 if(
-°r
-[
-i
-] !
-dñim
-){
-
-54 
-föÆ_°rög
-[
-j
-] = 
-°r
-[
-i
-];
-
-55 ++
-j
-;
-
-57 ++
-i
-;
-
-59  
-föÆ_°rög
-;
-
-60 
-	}
-}
-
-	@stringoper.h
-
-1 
-°æín
-(
-°r
-[]);
-
-2 
-gëI≈utSåög
-(
-°r
-[]);
-
-3 * 
-tokíizeTheSåög
-(
-°r
-[], 
-Àn
-, 
-dñim
-);
-
-4 ** 
-•lô_°rög
-(
-°r
-[], 
-dñim
-);
-
-	@/usr/include/errno.h
-
-22 #i‚def 
-_ERRNO_H
-
-
-26 #i‚def 
-__√ed_Em©h
-
-
-27 
-	#_ERRNO_H
- 1
-
-	)
-
-28 
-	~<„©uªs.h
->
-
-31 
-	g__BEGIN_DECLS
-
-
-35 
-	~<bôs/î∫o.h
->
-
-36 #unde‡
-__√ed_Em©h
-
-
-38 #ifdef 
-_ERRNO_H
-
-
-45 #i‚def 
-î∫o
-
-
-46 
-î∫o
-;
-
-49 #ifde‡
-__USE_GNU
-
-
-54 *
-¥ogøm_övoˇti⁄_«me
-, *
-¥ogøm_övoˇti⁄_sh‹t_«me
-;
-
-58 
-	g__END_DECLS
-
-
-66 #i‡
-deföed
- 
-__USE_GNU
- || deföed 
-__√ed_îr‹_t
-
-
-67 #i‚de‡
-__îr‹_t_deföed
-
-
-68 
-	tîr‹_t
-;
-
-69 
-	#__îr‹_t_deföed
- 1
-
-	)
-
-71 #unde‡
-__√ed_îr‹_t
-
-
-	@/usr/include/signal.h
-
-22 #i‚def 
-_SIGNAL_H
-
-
-24 #i‡!
-deföed
- 
-__√ed_sig_©omic_t
- && !deföed 
-__√ed_sig£t_t
-
-
-25 
-	#_SIGNAL_H
-
-
-	)
-
-28 
-	~<„©uªs.h
->
-
-30 
-	g__BEGIN_DECLS
-
-
-32 
-	~<bôs/sig£t.h
->
-
-36 #i‡
-deföed
- 
-__√ed_sig_©omic_t
- || deföed 
-_SIGNAL_H
-
-
-37 #i‚de‡
-__sig_©omic_t_deföed
-
-
-38 
-	#__sig_©omic_t_deföed
-
-
-	)
-
-39 
-__BEGIN_NAMESPACE_STD
-
-
-40 
-__sig_©omic_t
- 
-	tsig_©omic_t
-;
-
-41 
-	g__END_NAMESPACE_STD
-
-
-43 #unde‡
-__√ed_sig_©omic_t
-
-
-46 #i‡
-deföed
- 
-__√ed_sig£t_t
- || (deföed 
-_SIGNAL_H
- && deföed 
-__USE_POSIX
-)
-
-47 #i‚de‡
-__sig£t_t_deföed
-
-
-48 
-	#__sig£t_t_deföed
-
-
-	)
-
-49 
-__sig£t_t
- 
-	tsig£t_t
-;
-
-51 #unde‡
-__√ed_sig£t_t
-
-
-54 #ifde‡
-_SIGNAL_H
-
-
-56 
-	~<bôs/ty≥s.h
->
-
-57 
-	~<bôs/signum.h
->
-
-59 #i‡
-deföed
- 
-__USE_XOPEN
- || deföed 
-__USE_XOPEN2K
-
-
-60 #i‚de‡
-__pid_t_deföed
-
-
-61 
-__pid_t
- 
-	tpid_t
-;
-
-62 
-	#__pid_t_deföed
-
-
-	)
-
-64 #ifde‡
-__USE_XOPEN
-
-
-66 #i‚de‡
-__uid_t_deföed
-
-
-67 
-__uid_t
- 
-	tuid_t
-;
-
-68 
-	#__uid_t_deföed
-
-
-	)
-
-72 #ifde‡
-__USE_POSIX199309
-
-
-74 
-	#__√ed_time•ec
-
-
-	)
-
-75 
-	~<time.h
->
-
-78 #i‡
-deföed
- 
-__USE_POSIX199309
- || deföed 
-__USE_XOPEN_EXTENDED
-
-
-80 
-	~<bôs/sigöfo.h
->
-
-85 (*
-	t__sigh™dÀr_t
-) ();
-
-90 
-__sigh™dÀr_t
- 
-	$__sysv_sig«l
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-)
-
-91 
-__THROW
-;
-
-92 #ifde‡
-__USE_GNU
-
-
-93 
-__sigh™dÀr_t
- 
-	$sysv_sig«l
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-)
-
-94 
-__THROW
-;
-
-100 
-__BEGIN_NAMESPACE_STD
-
-
-101 #ifde‡
-__USE_MISC
-
-
-102 
-__sigh™dÀr_t
- 
-	$sig«l
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-)
-
-103 
-__THROW
-;
-
-106 #ifde‡
-__REDIRECT_NTH
-
-
-107 
-__sigh™dÀr_t
- 
-	`__REDIRECT_NTH
- (
-sig«l
-,
-
-108 (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-),
-
-109 
-__sysv_sig«l
-);
-
-111 
-	#sig«l
- 
-__sysv_sig«l
-
-
-	)
-
-114 
-__END_NAMESPACE_STD
-
-
-116 #ifde‡
-__USE_XOPEN
-
-
-119 
-__sigh™dÀr_t
- 
-	$bsd_sig«l
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-)
-
-120 
-__THROW
-;
-
-126 #ifde‡
-__USE_POSIX
-
-
-127 
-	$kûl
- (
-__pid_t
- 
-__pid
-, 
-__sig
-Ë
-__THROW
-;
-
-130 #i‡
-deföed
- 
-__USE_MISC
- || deföed 
-__USE_XOPEN_EXTENDED
-
-
-134 
-	$kûÕg
- (
-__pid_t
- 
-__pgΩ
-, 
-__sig
-Ë
-__THROW
-;
-
-137 
-__BEGIN_NAMESPACE_STD
-
-
-139 
-	$øi£
- (
-__sig
-Ë
-__THROW
-;
-
-140 
-__END_NAMESPACE_STD
-
-
-142 #ifde‡
-__USE_MISC
-
-
-144 
-__sigh™dÀr_t
- 
-	$ssig«l
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__h™dÀr
-)
-
-145 
-__THROW
-;
-
-146 
-	$gsig«l
- (
-__sig
-Ë
-__THROW
-;
-
-149 #ifde‡
-__USE_XOPEN2K8
-
-
-151 
-	`psig«l
- (
-__sig
-, c⁄° *
-__s
-);
-
-154 
-	`psigöfo
- (c⁄° 
-sigöfo_t
- *
-__pöfo
-, c⁄° *
-__s
-);
-
-166 #ifde‡
-__USE_XOPEN
-
-
-167 #ifde‡
-__GNUC__
-
-
-168 
-	$sig∑u£
- (
-__sig
-Ë
-	`__asm__
- ("__xpg_sigpause");
-
-170 
-	`__sig∑u£
- (
-__sig_‹_mask
-, 
-__is_sig
-);
-
-172 
-	#sig∑u£
-(
-sig
-Ë
-	`__sig∑u£
- ((sig), 1)
-
-	)
-
-177 #ifde‡
-__USE_MISC
-
-
-184 
-	#sigmask
-(
-sig
-Ë
-	`__sigmask
-(sig)
-
-	)
-
-187 
-	$sigblock
- (
-__mask
-Ë
-__THROW
- 
-__©åibuã_dïªˇãd__
-;
-
-190 
-	$sig£tmask
- (
-__mask
-Ë
-__THROW
- 
-__©åibuã_dïªˇãd__
-;
-
-193 
-	$siggëmask
- (Ë
-__THROW
- 
-__©åibuã_dïªˇãd__
-;
-
-197 #ifde‡
-__USE_MISC
-
-
-198 
-	#NSIG
- 
-_NSIG
-
-
-	)
-
-201 #ifde‡
-__USE_GNU
-
-
-202 
-__sigh™dÀr_t
- 
-	tsigh™dÀr_t
-;
-
-206 #ifde‡
-__USE_MISC
-
-
-207 
-__sigh™dÀr_t
- 
-	tsig_t
-;
-
-210 #ifde‡
-__USE_POSIX
-
-
-213 
-	$sigem±y£t
- (
-sig£t_t
- *
-__£t
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-216 
-	$sigfûl£t
- (
-sig£t_t
- *
-__£t
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-219 
-	$sigadd£t
- (
-sig£t_t
- *
-__£t
-, 
-__signo
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-222 
-	$sigdñ£t
- (
-sig£t_t
- *
-__£t
-, 
-__signo
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-225 
-	$sigismembî
- (c⁄° 
-sig£t_t
- *
-__£t
-, 
-__signo
-)
-
-226 
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-228 #ifde‡
-__USE_GNU
-
-
-230 
-	$sigi£m±y£t
- (c⁄° 
-sig£t_t
- *
-__£t
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-233 
-	$sig™d£t
- (
-sig£t_t
- *
-__£t
-, c⁄° sig£t_à*
-__À·
-,
-
-234 c⁄° 
-sig£t_t
- *
-__right
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1, 2, 3));
-
-237 
-	$sig‹£t
- (
-sig£t_t
- *
-__£t
-, c⁄° sig£t_à*
-__À·
-,
-
-238 c⁄° 
-sig£t_t
- *
-__right
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1, 2, 3));
-
-243 
-	~<bôs/siga˘i⁄.h
->
-
-246 
-	$sig¥ocmask
- (
-__how
-, c⁄° 
-sig£t_t
- *
-__ª°ri˘
- 
-__£t
-,
-
-247 
-sig£t_t
- *
-__ª°ri˘
- 
-__o£t
-Ë
-__THROW
-;
-
-254 
-	$sigsu•íd
- (c⁄° 
-sig£t_t
- *
-__£t
-Ë
-	`__n⁄nuŒ
- ((1));
-
-257 
-	$siga˘i⁄
- (
-__sig
-, c⁄° 
-siga˘i⁄
- *
-__ª°ri˘
- 
-__a˘
-,
-
-258 
-siga˘i⁄
- *
-__ª°ri˘
- 
-__ﬂ˘
-Ë
-__THROW
-;
-
-261 
-	$sig≥ndög
- (
-sig£t_t
- *
-__£t
-Ë
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-268 
-	$sigwaô
- (c⁄° 
-sig£t_t
- *
-__ª°ri˘
- 
-__£t
-, *__ª°ri˘ 
-__sig
-)
-
-269 
-	`__n⁄nuŒ
- ((1, 2));
-
-271 #ifde‡
-__USE_POSIX199309
-
-
-276 
-	$sigwaôöfo
- (c⁄° 
-sig£t_t
- *
-__ª°ri˘
- 
-__£t
-,
-
-277 
-sigöfo_t
- *
-__ª°ri˘
- 
-__öfo
-Ë
-	`__n⁄nuŒ
- ((1));
-
-284 
-	$sigtimedwaô
- (c⁄° 
-sig£t_t
- *
-__ª°ri˘
- 
-__£t
-,
-
-285 
-sigöfo_t
- *
-__ª°ri˘
- 
-__öfo
-,
-
-286 c⁄° 
-time•ec
- *
-__ª°ri˘
- 
-__timeout
-)
-
-287 
-	`__n⁄nuŒ
- ((1));
-
-291 
-	$sigqueue
- (
-__pid_t
- 
-__pid
-, 
-__sig
-, c⁄° 
-sigvÆ
- 
-__vÆ
-)
-
-292 
-__THROW
-;
-
-297 #ifde‡
-__USE_MISC
-
-
-301 c⁄° *c⁄° 
-_sys_sigli°
-[
-_NSIG
-];
-
-302 c⁄° *c⁄° 
-sys_sigli°
-[
-_NSIG
-];
-
-306 
-	~<bôs/sigc⁄ãxt.h
->
-
-309 
-	$sigªtu∫
- (
-sigc⁄ãxt
- *
-__s˝
-Ë
-__THROW
-;
-
-314 #i‡
-deföed
- 
-__USE_XOPEN_EXTENDED
- || deföed 
-__USE_XOPEN2K8
-
-
-315 
-	#__√ed_size_t
-
-
-	)
-
-316 
-	~<°ddef.h
->
-
-321 
-	$sigöãºu±
- (
-__sig
-, 
-__öãºu±
-Ë
-__THROW
-;
-
-323 
-	~<bôs/sig°ack.h
->
-
-324 #i‡
-deföed
- 
-__USE_XOPEN
- || deföed 
-__USE_XOPEN2K8
-
-
-326 
-	~<sys/uc⁄ãxt.h
->
-
-332 
-	$sig°ack
- (
-sig°ack
- *
-__ss
-, sig°ack *
-__oss
-)
-
-333 
-__THROW
- 
-__©åibuã_dïªˇãd__
-;
-
-337 
-	$sigÆt°ack
- (c⁄° 
-sigÆt°ack
- *
-__ª°ri˘
- 
-__ss
-,
-
-338 
-sigÆt°ack
- *
-__ª°ri˘
- 
-__oss
-Ë
-__THROW
-;
-
-342 #ifde‡
-__USE_XOPEN_EXTENDED
-
-
-346 
-	$sighﬁd
- (
-__sig
-Ë
-__THROW
-;
-
-349 
-	$sigªl£
- (
-__sig
-Ë
-__THROW
-;
-
-352 
-	$sigign‹e
- (
-__sig
-Ë
-__THROW
-;
-
-355 
-__sigh™dÀr_t
- 
-	$sig£t
- (
-__sig
-, 
-__sigh™dÀr_t
- 
-__di•
-Ë
-__THROW
-;
-
-358 #i‡
-deföed
- 
-__USE_POSIX199506
- || deföed 
-__USE_UNIX98
-
-
-361 
-	~<bôs/±hªadty≥s.h
->
-
-362 
-	~<bôs/sigthªad.h
->
-
-369 
-	$__libc_cuºít_sigπmö
- (Ë
-__THROW
-;
-
-371 
-	$__libc_cuºít_sigπmax
- (Ë
-__THROW
-;
-
-375 
-__END_DECLS
-
 
 	@/usr/include/stdio.h
 
@@ -16851,1152 +15831,6 @@ __LDBL_COMPAT
 __˝lu•lus
 
 
-	@/usr/include/time.h
-
-22 #i‚def 
-_TIME_H
-
-
-24 #i‡(! 
-deföed
- 
-__√ed_time_t
- && !deföed 
-__√ed_˛ock_t
- && \
-
-25 ! 
-deföed
- 
-	g__√ed_time•ec
-)
-
-26 
-	#_TIME_H
- 1
-
-	)
-
-27 
-	~<„©uªs.h
->
-
-29 
-	g__BEGIN_DECLS
-
-
-33 #ifdef 
-_TIME_H
-
-
-35 
-	#__√ed_size_t
-
-
-	)
-
-36 
-	#__√ed_NULL
-
-
-	)
-
-37 
-	~<°ddef.h
->
-
-41 
-	~<bôs/time.h
->
-
-44 #i‡!
-deföed
- 
-__STRICT_ANSI__
- && !deföed 
-__USE_XOPEN2K
-
-
-45 #i‚de‡
-CLK_TCK
-
-
-46 
-	#CLK_TCK
- 
-CLOCKS_PER_SEC
-
-
-	)
-
-52 #i‡!
-deföed
- 
-__˛ock_t_deföed
- && (deföed 
-_TIME_H
- || deföed 
-__√ed_˛ock_t
-)
-
-53 
-	#__˛ock_t_deföed
- 1
-
-	)
-
-55 
-	~<bôs/ty≥s.h
->
-
-57 
-__BEGIN_NAMESPACE_STD
-
-
-59 
-__˛ock_t
- 
-	t˛ock_t
-;
-
-60 
-	g__END_NAMESPACE_STD
-
-
-61 #i‡
-deföed
- 
-__USE_XOPEN
- || deföed 
-__USE_POSIX
-
-
-62 
-	$__USING_NAMESPACE_STD
-(
-˛ock_t
-)
-
-66 #unde‡
-__√ed_˛ock_t
-
-
-68 #i‡!
-deföed
- 
-__time_t_deföed
- && (deföed 
-_TIME_H
- || deföed 
-__√ed_time_t
-)
-
-69 
-	#__time_t_deföed
- 1
-
-	)
-
-71 
-	~<bôs/ty≥s.h
->
-
-73 
-__BEGIN_NAMESPACE_STD
-
-
-75 
-__time_t
- 
-	ttime_t
-;
-
-76 
-__END_NAMESPACE_STD
-
-
-77 #ifde‡
-__USE_POSIX
-
-
-78 
-	$__USING_NAMESPACE_STD
-(
-time_t
-)
-
-82 #unde‡
-__√ed_time_t
-
-
-84 #i‡!
-deföed
- 
-__˛ockid_t_deföed
- && \
-
-85 ((
-deföed
- 
-_TIME_H
- && deföed 
-__USE_POSIX199309
-Ë|| deföed 
-__√ed_˛ockid_t
-)
-
-86 
-	#__˛ockid_t_deföed
- 1
-
-	)
-
-88 
-	~<bôs/ty≥s.h
->
-
-91 
-__˛ockid_t
- 
-	t˛ockid_t
-;
-
-94 #unde‡
-__˛ockid_time_t
-
-
-96 #i‡!
-deföed
- 
-__timî_t_deföed
- && \
-
-97 ((
-deföed
- 
-_TIME_H
- && deföed 
-__USE_POSIX199309
-Ë|| deföed 
-__√ed_timî_t
-)
-
-98 
-	#__timî_t_deföed
- 1
-
-	)
-
-100 
-	~<bôs/ty≥s.h
->
-
-103 
-__timî_t
- 
-	ttimî_t
-;
-
-106 #unde‡
-__√ed_timî_t
-
-
-109 #i‡(!
-deföed
- 
-__time•ec_deföed
- \
-
-110 && ((
-deföed
- 
-_TIME_H
- \
-
-111 && (
-deföed
- 
-__USE_POSIX199309
- \
-
-112 || 
-deföed
- 
-__USE_ISOC11
-)) \
-
-113 || 
-deföed
- 
-__√ed_time•ec
-))
-
-114 
-	#__time•ec_deföed
- 1
-
-	)
-
-116 
-	~<bôs/ty≥s.h
->
-
-120 
-	stime•ec
-
-
-122 
-__time_t
- 
-tv_£c
-;
-
-123 
-__sysˇŒ_¶⁄g_t
- 
-tv_n£c
-;
-
-127 #unde‡
-__√ed_time•ec
-
-
-130 #ifdef 
-_TIME_H
-
-
-131 
-__BEGIN_NAMESPACE_STD
-
-
-133 
-	stm
-
-
-135 
-tm_£c
-;
-
-136 
-tm_mö
-;
-
-137 
-tm_hour
-;
-
-138 
-tm_mday
-;
-
-139 
-tm_m⁄
-;
-
-140 
-tm_yór
-;
-
-141 
-tm_wday
-;
-
-142 
-tm_yday
-;
-
-143 
-tm_isd°
-;
-
-145 #ifdef 
-__USE_MISC
-
-
-146 
-tm_gmtoff
-;
-
-147 c⁄° *
-tm_z⁄e
-;
-
-149 
-__tm_gmtoff
-;
-
-150 c⁄° *
-__tm_z⁄e
-;
-
-153 
-__END_NAMESPACE_STD
-
-
-154 #i‡
-deföed
- 
-__USE_XOPEN
- || deföed 
-__USE_POSIX
-
-
-155 
-	$__USING_NAMESPACE_STD
-(
-tm
-)
-
-159 #ifde‡
-__USE_POSIX199309
-
-
-161 
-	sôimî•ec
-
-
-163 
-time•ec
- 
-ô_öãrvÆ
-;
-
-164 
-time•ec
- 
-ô_vÆue
-;
-
-168 
-sigevít
-;
-
-172 #ifde‡
-__USE_XOPEN2K
-
-
-173 #i‚de‡
-__pid_t_deföed
-
-
-174 
-__pid_t
- 
-	tpid_t
-;
-
-175 
-	#__pid_t_deföed
-
-
-	)
-
-180 #ifde‡
-__USE_ISOC11
-
-
-182 
-	#TIME_UTC
- 1
-
-	)
-
-186 
-__BEGIN_NAMESPACE_STD
-
-
-189 
-˛ock_t
- 
-	$˛ock
- (Ë
-__THROW
-;
-
-192 
-time_t
- 
-	$time
- (
-time_t
- *
-__timî
-Ë
-__THROW
-;
-
-195 
-	$dif·ime
- (
-time_t
- 
-__time1
-,Åime_à
-__time0
-)
-
-196 
-__THROW
- 
-	`__©åibuã__
- ((
-__c⁄°__
-));
-
-199 
-time_t
- 
-	$mktime
- (
-tm
- *
-__ç
-Ë
-__THROW
-;
-
-205 
-size_t
- 
-	$°r·ime
- (*
-__ª°ri˘
- 
-__s
-, 
-size_t
- 
-__maxsize
-,
-
-206 c⁄° *
-__ª°ri˘
- 
-__f‹m©
-,
-
-207 c⁄° 
-tm
- *
-__ª°ri˘
- 
-__ç
-Ë
-__THROW
-;
-
-208 
-__END_NAMESPACE_STD
-
-
-210 #ifde‡
-__USE_XOPEN
-
-
-213 *
-	$°Ωtime
- (c⁄° *
-__ª°ri˘
- 
-__s
-,
-
-214 c⁄° *
-__ª°ri˘
- 
-__fmt
-, 
-tm
- *
-__ç
-)
-
-215 
-__THROW
-;
-
-218 #ifde‡
-__USE_XOPEN2K8
-
-
-221 
-	~<xloˇÀ.h
->
-
-223 
-size_t
- 
-	$°r·ime_l
- (*
-__ª°ri˘
- 
-__s
-, 
-size_t
- 
-__maxsize
-,
-
-224 c⁄° *
-__ª°ri˘
- 
-__f‹m©
-,
-
-225 c⁄° 
-tm
- *
-__ª°ri˘
- 
-__ç
-,
-
-226 
-__loˇÀ_t
- 
-__loc
-Ë
-__THROW
-;
-
-229 #ifde‡
-__USE_GNU
-
-
-230 *
-	$°Ωtime_l
- (c⁄° *
-__ª°ri˘
- 
-__s
-,
-
-231 c⁄° *
-__ª°ri˘
- 
-__fmt
-, 
-tm
- *
-__ç
-,
-
-232 
-__loˇÀ_t
- 
-__loc
-Ë
-__THROW
-;
-
-236 
-__BEGIN_NAMESPACE_STD
-
-
-239 
-tm
- *
-	$gmtime
- (c⁄° 
-time_t
- *
-__timî
-Ë
-__THROW
-;
-
-243 
-tm
- *
-	$loˇ…ime
- (c⁄° 
-time_t
- *
-__timî
-Ë
-__THROW
-;
-
-244 
-__END_NAMESPACE_STD
-
-
-246 #ifde‡
-__USE_POSIX
-
-
-249 
-tm
- *
-	$gmtime_r
- (c⁄° 
-time_t
- *
-__ª°ri˘
- 
-__timî
-,
-
-250 
-tm
- *
-__ª°ri˘
- 
-__ç
-Ë
-__THROW
-;
-
-254 
-tm
- *
-	$loˇ…ime_r
- (c⁄° 
-time_t
- *
-__ª°ri˘
- 
-__timî
-,
-
-255 
-tm
- *
-__ª°ri˘
- 
-__ç
-Ë
-__THROW
-;
-
-258 
-__BEGIN_NAMESPACE_STD
-
-
-261 *
-	$as˘ime
- (c⁄° 
-tm
- *
-__ç
-Ë
-__THROW
-;
-
-264 *
-	$˘ime
- (c⁄° 
-time_t
- *
-__timî
-Ë
-__THROW
-;
-
-265 
-__END_NAMESPACE_STD
-
-
-267 #ifde‡
-__USE_POSIX
-
-
-272 *
-	$as˘ime_r
- (c⁄° 
-tm
- *
-__ª°ri˘
- 
-__ç
-,
-
-273 *
-__ª°ri˘
- 
-__buf
-Ë
-__THROW
-;
-
-276 *
-	$˘ime_r
- (c⁄° 
-time_t
- *
-__ª°ri˘
- 
-__timî
-,
-
-277 *
-__ª°ri˘
- 
-__buf
-Ë
-__THROW
-;
-
-282 *
-__tz«me
-[2];
-
-283 
-__daylight
-;
-
-284 
-__timez⁄e
-;
-
-287 #ifdef 
-__USE_POSIX
-
-
-289 *
-tz«me
-[2];
-
-293 
-	$tz£t
- (Ë
-__THROW
-;
-
-296 #i‡
-deföed
- 
-__USE_MISC
- || deföed 
-__USE_XOPEN
-
-
-297 
-daylight
-;
-
-298 
-timez⁄e
-;
-
-301 #ifde‡
-__USE_MISC
-
-
-304 
-	$°ime
- (c⁄° 
-time_t
- *
-__whí
-Ë
-__THROW
-;
-
-310 
-	#__i¶óp
-(
-yór
-) \
-
-311 ((
-yór
-Ë% 4 =0 && ((yórË% 100 !0 || (yórË% 400 =0))
-
-	)
-
-314 #ifde‡
-__USE_MISC
-
-
-319 
-time_t
- 
-	$timegm
- (
-tm
- *
-__ç
-Ë
-__THROW
-;
-
-322 
-time_t
- 
-	$timñoˇl
- (
-tm
- *
-__ç
-Ë
-__THROW
-;
-
-325 
-	$dysize
- (
-__yór
-Ë
-__THROW
- 
-	`__©åibuã__
- ((
-__c⁄°__
-));
-
-329 #ifde‡
-__USE_POSIX199309
-
-
-334 
-	`«no¶ìp
- (c⁄° 
-time•ec
- *
-__ªque°ed_time
-,
-
-335 
-time•ec
- *
-__ªmaöög
-);
-
-339 
-	$˛ock_gëªs
- (
-˛ockid_t
- 
-__˛ock_id
-, 
-time•ec
- *
-__ªs
-Ë
-__THROW
-;
-
-342 
-	$˛ock_gëtime
- (
-˛ockid_t
- 
-__˛ock_id
-, 
-time•ec
- *
-__ç
-Ë
-__THROW
-;
-
-345 
-	$˛ock_£âime
- (
-˛ockid_t
- 
-__˛ock_id
-, c⁄° 
-time•ec
- *
-__ç
-)
-
-346 
-__THROW
-;
-
-348 #ifde‡
-__USE_XOPEN2K
-
-
-353 
-	`˛ock_«no¶ìp
- (
-˛ockid_t
- 
-__˛ock_id
-, 
-__Êags
-,
-
-354 c⁄° 
-time•ec
- *
-__ªq
-,
-
-355 
-time•ec
- *
-__ªm
-);
-
-358 
-	$˛ock_gë˝u˛ockid
- (
-pid_t
- 
-__pid
-, 
-˛ockid_t
- *
-__˛ock_id
-Ë
-__THROW
-;
-
-363 
-	$timî_¸óã
- (
-˛ockid_t
- 
-__˛ock_id
-,
-
-364 
-sigevít
- *
-__ª°ri˘
- 
-__evp
-,
-
-365 
-timî_t
- *
-__ª°ri˘
- 
-__timîid
-Ë
-__THROW
-;
-
-368 
-	$timî_dñëe
- (
-timî_t
- 
-__timîid
-Ë
-__THROW
-;
-
-371 
-	$timî_£âime
- (
-timî_t
- 
-__timîid
-, 
-__Êags
-,
-
-372 c⁄° 
-ôimî•ec
- *
-__ª°ri˘
- 
-__vÆue
-,
-
-373 
-ôimî•ec
- *
-__ª°ri˘
- 
-__ovÆue
-Ë
-__THROW
-;
-
-376 
-	$timî_gëtime
- (
-timî_t
- 
-__timîid
-, 
-ôimî•ec
- *
-__vÆue
-)
-
-377 
-__THROW
-;
-
-380 
-	$timî_gëovîrun
- (
-timî_t
- 
-__timîid
-Ë
-__THROW
-;
-
-384 #ifde‡
-__USE_ISOC11
-
-
-386 
-	$time•ec_gë
- (
-time•ec
- *
-__ts
-, 
-__ba£
-)
-
-387 
-__THROW
- 
-	`__n⁄nuŒ
- ((1));
-
-391 #ifde‡
-__USE_XOPEN_EXTENDED
-
-
-403 
-gëd©e_îr
-;
-
-412 
-tm
- *
-	`gëd©e
- (c⁄° *
-__°rög
-);
-
-415 #ifde‡
-__USE_GNU
-
-
-426 
-	`gëd©e_r
- (c⁄° *
-__ª°ri˘
- 
-__°rög
-,
-
-427 
-tm
- *
-__ª°ri˘
- 
-__ªsbuÂ
-);
-
-430 
-__END_DECLS
-
-
 	@/usr/include/xlocale.h
 
 20 #i‚de‡
@@ -24600,19 +22434,13 @@ __END_DECLS
 .
 1
 /usr/include
-28
-519
+21
+404
 binaryoper.c
-binaryoper.h
-cdoper.c
-cdoper.h
+cd.c
+exec_sh.c
 sbush.c
 scripts.c
-scripts.h
-stringoper.c
-stringoper.h
-/usr/include/errno.h
-/usr/include/signal.h
 /usr/include/stdio.h
 /usr/include/stdlib.h
 /usr/include/string.h
@@ -24621,7 +22449,6 @@ stringoper.h
 /usr/include/features.h
 /usr/include/getopt.h
 /usr/include/libio.h
-/usr/include/time.h
 /usr/include/xlocale.h
 /usr/include/_G_config.h
 /usr/include/ctype.h

@@ -2,7 +2,7 @@
 #define _UNISTD_H
 
 #include <sys/defs.h>
-
+/*
 int open(const char *pathname, int flags);
 int close(int fd);
 ssize_t read(int fd, void *buf, size_t count);
@@ -28,5 +28,15 @@ int mkdir(const char *pathname, mode_t mode);
 
 // OPTIONAL: implement for ``signals and pipes (+10 pts)''
 int pipe(int pipefd[2]);
+*/
+char *getcwd(char *buf, size_t size);
+extern int waitpid(int pid, int *wstatus, int options);
+extern int execvp(char *file, char *argv[]);
+extern pid_t fork();
+extern int chdir( char *path);
+extern int open(char *pathname, int flags);
+extern int pipe(int fd[]);
+extern int close(int fd) ;
+extern int dup2(int oldfd, int newfd) ;
 
 #endif
